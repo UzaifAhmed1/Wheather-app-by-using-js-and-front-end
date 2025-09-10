@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather - Google Style</title>
+
+  <!-- Link external CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+      <div class="search-section">
+          <div class="search-bar">
+              <span class="search-icon">🔍</span>
+              <input type="text" class="search-input" id="cityInput" placeholder="Search for a city or airport">
+              <button class="location-btn" onclick="getCurrentLocation()">📍 Current location</button>
+          </div>
+      </div>
+
+      <div id="loading" class="loading hidden">
+          <div>Getting weather data...</div>
+      </div>
+
+      <div id="error" class="error hidden"></div>
+
+      <div id="weatherCard" class="weather-card">
+          <div class="current-weather">
+              <div class="weather-icon-large" id="currentIcon">☀️</div>
+              <div class="current-info">
+                  <div class="location-name" id="locationName">New York, NY</div>
+                  <div class="current-temp" id="currentTemp">22°</div>
+                  <div class="weather-desc" id="weatherDesc">Sunny</div>
+                  <div class="precipitation" id="precipitation">
+                      🌧️ <span id="rainChance">10</span>% chance of rain
+                  </div>
+              </div>
+          </div>
+
+          <div class="current-details">
+              <div class="detail-item">
+                  <div class="detail-label">Feels like</div>
+                  <div class="detail-value" id="feelsLike">25°</div>
+              </div>
+              <div class="detail-item">
+                  <div class="detail-label">Wind</div>
+                  <div class="detail-value" id="windSpeed">12 km/h</div>
+              </div>
+              <div class="detail-item">
+                  <div class="detail-label">Humidity</div>
+                  <div class="detail-value" id="humidity">65%</div>
+              </div>
+              <div class="detail-item">
+                  <div class="detail-label">UV index</div>
+                  <div class="detail-value" id="uvIndex">5</div>
+              </div>
+              <div class="detail-item">
+                  <div class="detail-label">Pressure</div>
+                  <div class="detail-value" id="pressure">1013 mb</div>
+              </div>
+              <div class="detail-item">
+                  <div class="detail-label">Visibility</div>
+                  <div class="detail-value" id="visibility">10 km</div>
+              </div>
+          </div>
+
+          <div class="forecast-section">
+              <div class="forecast-header">Today's forecast</div>
+              <div class="hourly-forecast" id="hourlyForecast"></div>
+
+              <div class="separator"></div>
+
+              <div class="forecast-header">10-day forecast</div>
+              <div class="daily-forecast" id="dailyForecast"></div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Link external JS -->
+  <script src="logic.js"></script>
+</body>
+</html>
